@@ -1,28 +1,48 @@
-const menuToggle = document.getElementById('menu-toggle');
-const sidebar = document.getElementById('sidebar');
-const videos = document.querySelectorAll('.slideshow video');
+window.addEventListener('DOMContentLoaded', function() {
+    var linkButtons = document.querySelectorAll('.link-buttons a');
+    var wrapper = document.getElementById('wrapper');
+    var backgrounds = {
+        default: 'background1.gif',
+        instagram: 'instagram.gif',
+        tiktok: 'tiktok.gif',
+        etsy: 'etsy.gif',
+    };
 
-menuToggle.addEventListener('click', function() {
-  sidebar.classList.toggle('open');
-  menuToggle.classList.toggle('open');
-});
+    var currentBackground = backgrounds.default;
+    var activeLink = null;
 
-videos.forEach(video => {
-  video.muted = true;
+    // Set default background on page load
+    wrapper.style.backgroundImage = 'url("' + currentBackground + '")';
 
-  video.addEventListener('click', function() {
-    if (video.paused) {
-      video.play();
-    } else {
-      video.pause();
-    }
-  });
+    // Change background on link hover
+    linkButtons.forEach(function(linkButton) {
+        linkButton.addEventListener('mouseenter', function() {
+            var linkBackground = linkButton.dataset.background;
+            wrapper.style.backgroundImage = 'url("' + backgrounds[linkBackground] + '")';
+        });
 
-  video.addEventListener('play', function() {
-    videos.forEach(vid => {
-      if (vid !== video) {
-        vid.pause();
-      }
+        linkButton.addEventListener('mouseleave', function() {
+            if (activeLink) {
+                var activeLinkBackground = activeLink.dataset.background;
+                wrapper.style.backgroundImage = 'url("' + backgrounds[activeLinkBackground] + '")';
+            } else {
+                wrapper.style.backgroundImage = 'url("' + currentBackground + '")';
+            }
+        });
+
+        linkButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            if (linkButton.classList.contains('active')) {
+                window.open(linkButton.href, '_blank');
+            } else {
+                linkButtons.forEach(function(button) {
+                    button.classList.remove('active');
+                    button.textContent = button.dataset.originalText;
+                });
+                linkButton.classList.add('active');
+                activeLink = linkButton;
+                linkButton.textContent = 'Open ' + linkButton.textContent;
+            }
+        });
     });
-  });
 });

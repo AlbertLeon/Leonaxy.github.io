@@ -1,122 +1,145 @@
+/* CSS for the index.html */
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'arial', sans-serif;
+    background-color: black;
+    max-width: 768px;
+    overflow-x: hidden;
+    /*margin set to 0 auto will cause the whole body to be centered which is perfect for mobile view*/
+    margin: 0 auto;
 }
 
-.container {
-    max-width: 960px;
+
+/* Wrapper is where I have the backgrounds*/
+
+#wrapper {
     margin: 0 auto;
-    padding: 20px;
+    padding: 45px;
+    width: 0 auto;
+    height: 0 auto;
+    margin-top: 0 auto;
+    margin-bottom: 0 auto;
+    box-sizing: border-box;
+    /* Make the background image fit within the wrapper without cropping */
+    background-size: contain;
+    /* Prevent the background from repeating */
+    background-repeat: no-repeat;
+    /* Center the background image */
+    background-position: center center;
 }
+
+
+/* Header */
 
 header {
-    background-color: #006400;
-    color: #fff;
-    padding: 10px;
+    margin: 0 auto;
+    padding: 16px;
 }
 
-.menu-toggle {
-    cursor: pointer;
-    font-size: 24px;
-    position: absolute;
-    top: 10px;
-    right: 10px; /* Updated to position on the right side */
-    transition: transform 0.3s ease;
-    z-index: 3;
+header h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    color: #39FFFD;
+    font-size: 30px;
+    line-height: 36px;
+    font-style: italic;
 }
 
-.menu-toggle.open {
-    transform: translateX(-200px); /* Updated to move to the left when sidebar is opened */
-}
 
-.header-logo {
-    font-family: 'Comic Neue', cursive;
-    font-size: 48px;
+/* Article */
+
+article {
+    background-color: #312f2f;
+    padding: 16px;
+    margin: 0 auto;
     text-align: center;
 }
 
-.sidebar {
-    background-color: rgba(51, 51, 51, 0.8);
-    color: #fff;
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    right: -200px; /* Updated to position on the right side */
-    transition: right 0.3s ease; /* Updated to control the right property */
-    z-index: 2;
+#video {
+    margin-bottom: 20px;
 }
 
-.sidebar.open {
-    right: 0; /* Updated to show the sidebar from the right side */
+#video iframe {
+    height: auto;
 }
 
-.sidebar .logo {
-    font-size: 18px;
-    font-weight: bold;
-    padding: 10px;
-    text-align: center;
-}
 
-.sidebar .sidebar-links {
-    padding: 20px;
-}
+/* Links Section */
 
-.sidebar .sidebar-links a {
-    display: block;
-    color: #fff;
-    text-decoration: none;
-    margin-bottom: 10px;
-}
-
-.sidebar .sidebar-links a:hover {
-    color: #00ff00;
-}
-
-.content {
-    padding: 20px;
-    text-align: center;
+h2 {
+    padding-top: 10px;
+    color: white;
     margin: 0 auto;
 }
 
-.slideshow-container {
-    overflow-x: auto;
-    white-space: nowrap;
-    z-index: 1;
+#links-section {
+    text-align: center;
+    border-top: 5px solid #39FFFD;
+    border-bottom: 5px solid #39FFFD;
+    background-color: dimgrey;
 }
 
-.slideshow {
-    display: inline-flex;
-    gap: 20px;
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.slideshow img,
-.slideshow video {
-    width: 300px;
-    max-height: 600px;
-    border: 1px solid black;
-    /* Add black border */
-}
-
-footer {
-    background-color: #006400;
-    color: #fff;
+.link-buttons a {
+    color: white;
+    background-color: #010F22;
+    display: inline-block;
     padding: 10px;
-    bottom: 0;
-    z-index: 3;
+    margin: 10px;
+    text-align: center;
+    list-style: none;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid #39FFFD;
+    border-radius: 5px;
 }
 
-.footer-links {
+.link-buttons a:hover {
+    background-color: #39FFFD;
+}
+
+.link-buttons a.active {
+    background-color: #f6d635;
+}
+
+
+/* This is for the About Me section*/
+
+h3 {
+    color: white;
     text-align: center;
 }
 
-.footer-links a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
+.about-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding-top: 10px;
+    margin: 0 auto;
+    text-align: center;
+    background: #010F22;
+    border-top: 5px solid #39FFFD;
+    border-left: 5px solid #39FFFD;
+    border-right: 5px solid #39FFFD;
+    border-bottom: 5px solid #39FFFD;
 }
 
-.footer-links a:hover {
-    color: #00ff00;
+
+/* Footer */
+
+footer {
+    background-color: #010F22;
+    padding: 10px;
+    text-align: center;
+    border: 5px solid #39FFFD;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
 }
