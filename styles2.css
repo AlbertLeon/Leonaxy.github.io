@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    background-color: #006400;
+    color: #fff;
+    padding: 10px;
+}
+
+.menu-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* Updated to position on the right side */
+    transition: transform 0.3s ease;
+    z-index: 3;
+}
+
+.menu-toggle.open {
+    transform: translateX(-200px);
+    /* Updated to move to the left when sidebar is opened */
+}
+
+.header-logo {
+    font-family: 'Comic Neue', cursive;
+    font-size: 48px;
+    text-align: center;
+}
+
+.sidebar {
+    background-color: rgba(51, 51, 51, 0.8);
+    color: #fff;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    /* Updated to position on the right side */
+    transition: right 0.3s ease;
+    /* Updated to control the right property */
+    z-index: 2;
+}
+
+.sidebar.open {
+    right: 0;
+    /* Updated to show the sidebar from the right side */
+}
+
+.sidebar .logo {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar .sidebar-links {
+    padding: 20px;
+}
+
+.sidebar .sidebar-links a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 10px;
+}
+
+.sidebar .sidebar-links a:hover {
+    color: #00ff00;
+}
+
+.content {
+    padding: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.slideshow-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    z-index: 1;
+}
+
+.slideshow {
+    display: inline-flex;
+    gap: 20px;
+}
+
+.slideshow img,
+.slideshow video {
+    width: 300px;
+    max-height: 600px;
+    border: 1px solid black;
+    /* Add black border */
+}
+
+footer {
+    background-color: #006400;
+    color: #fff;
+    padding: 10px;
+    bottom: 0;
+    z-index: 3;
+}
+
+.footer-links {
+    text-align: center;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-links a:hover {
+    color: #00ff00;
+}

@@ -1,0 +1,145 @@
+/* CSS for the index.html */
+
+body {
+    font-family: 'arial', sans-serif;
+    background-color: black;
+    max-width: 768px;
+    overflow-x: hidden;
+    /*margin set to 0 auto will cause the whole body to be centered which is perfect for mobile view*/
+    margin: 0 auto;
+}
+
+
+/* Wrapper is where I have the backgrounds*/
+
+#wrapper {
+    margin: 0 auto;
+    padding: 45px;
+    width: 0 auto;
+    height: 0 auto;
+    margin-top: 0 auto;
+    margin-bottom: 0 auto;
+    box-sizing: border-box;
+    /* Make the background image fit within the wrapper without cropping */
+    background-size: contain;
+    /* Prevent the background from repeating */
+    background-repeat: no-repeat;
+    /* Center the background image */
+    background-position: center center;
+}
+
+
+/* Header */
+
+header {
+    margin: 0 auto;
+    padding: 16px;
+}
+
+header h1 {
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 30px;
+    color: #39FFFD;
+    font-size: 30px;
+    line-height: 36px;
+    font-style: italic;
+}
+
+
+/* Article */
+
+article {
+    background-color: #312f2f;
+    padding: 16px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#video {
+    margin-bottom: 20px;
+}
+
+#video iframe {
+    height: auto;
+}
+
+
+/* Links Section */
+
+h2 {
+    padding-top: 10px;
+    color: white;
+    margin: 0 auto;
+}
+
+#links-section {
+    text-align: center;
+    border-top: 5px solid #39FFFD;
+    border-bottom: 5px solid #39FFFD;
+    background-color: dimgrey;
+}
+
+.link-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-buttons a {
+    color: white;
+    background-color: #010F22;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    list-style: none;
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    text-decoration: none;
+    border: 2px solid #39FFFD;
+    border-radius: 5px;
+}
+
+.link-buttons a:hover {
+    background-color: #39FFFD;
+}
+
+.link-buttons a.active {
+    background-color: #f6d635;
+}
+
+
+/* This is for the About Me section*/
+
+h3 {
+    color: white;
+    text-align: center;
+}
+
+.about-section {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    padding-top: 10px;
+    margin: 0 auto;
+    text-align: center;
+    background: #010F22;
+    border-top: 5px solid #39FFFD;
+    border-left: 5px solid #39FFFD;
+    border-right: 5px solid #39FFFD;
+    border-bottom: 5px solid #39FFFD;
+}
+
+
+/* Footer */
+
+footer {
+    background-color: #010F22;
+    padding: 10px;
+    text-align: center;
+    border: 5px solid #39FFFD;
+    color: white;
+    font-size: 14px;
+    z-index: 1;
+}
